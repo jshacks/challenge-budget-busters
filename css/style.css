@@ -875,6 +875,9 @@ h6 {
 .purple-text{
     color: #DCC6E0 !important;
 }
+.dark-purple-text {
+    color: #663399;
+}
 .purple-text-hover:hover{
     color: #7b00e3 !important;
 }
@@ -909,13 +912,16 @@ h6 {
 	background: #e90052 !important;
 }
 .white-bg{
-	background: #fff;
+	background: #ffffff;
 }
 .white-bg-hover:hover{
-    background: #fff !important;
+    background: #ffffff !important;
 }
 .no-bg{
     background: transparent !important;
+}
+.dark-purple-bg {
+   background: #663399;
 }
 
 
