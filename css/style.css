@@ -1240,3 +1240,9 @@ ul.border-list, .popular-tags ul {
     max-width: 289px;
     margin-top: 24px;
 }
+.navbar {
+    position: inherit;
+}
+.countdown-wrapper {
+    margin-top: -150px;
+}
