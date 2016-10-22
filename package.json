@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"Error: src/index.js is not configured\" && exit 1",
+    "start": "node src/index.js",
     "release": "echo \"Error: release system is not configured\" && exit 1",
     "lint": "echo \"Error: linting system is not configured\" && exit 1",
     "build": "echo \"Error: build system is not configured\" && exit 1",
-    "bump-version": "echo \"Error: bump-version system is not configured\" && exit 1",
+    "bump-version": "echo \"Error: bump-version system is not configured\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/jshacks/boilerplate/issues"
   },
-  "homepage": "https://github.com/jshacks/boilerplate#readme"
+  "homepage": "https://github.com/jshacks/boilerplate#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.4"
+  }
 }
