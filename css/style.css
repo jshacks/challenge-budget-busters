@@ -893,6 +893,9 @@ h6 {
 .blue-bg-hover:hover{
     background: #0393ef !important;
 }
+.orange-bg {
+    background: #f4aa33;
+}
 .light-gray-bg{
 	background: #eee !important;
 }
@@ -922,6 +925,43 @@ h6 {
 }
 .dark-purple-bg {
    background: #663399;
+}
+.mild-red-bg {
+  background: rgba(212, 55, 66, 1);
+} 
+.mild-yellow-bg {
+  background: rgba(237, 174, 73, 1);
+}
+.mild-turqoise-bg {
+  background: rgba(0, 121, 140, 1);
+}
+.mild-blue-bg {
+  background: rgba(48, 99, 142, 1);
+}
+.mild-dark-blue-bg {
+  background: rgba(0, 61, 91, 1);
+}
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+.square-elem {
+    width: 150px;
+    height: 150px;
+}
+.vertical-align {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+}
+.vertical-align > h4 {
+    width: 75%;
+    line-height: 24px;
 }
 
 
