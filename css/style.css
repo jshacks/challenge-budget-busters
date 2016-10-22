@@ -869,8 +869,11 @@ h6 {
 .red-text{
 	color: #e90052 !important;
 }
+.pink-text {
+    color: #e9467e !important;
+}
 .purple-text{
-    color: #7b00e3 !important;
+    color: #DCC6E0 !important;
 }
 .purple-text-hover:hover{
     color: #7b00e3 !important;
