@@ -1240,3 +1240,10 @@ ul.border-list, .popular-tags ul {
     max-width: 289px;
     margin-top: 24px;
 }
+
+.text-center {
+    text-align: center;
+}
+.m-0-a {
+    margin: 0 auto;
+}
