@@ -1252,3 +1252,16 @@ ul.border-list, .popular-tags ul {
 .mt-10 {
     margin-top: -100px;
 }
+.left {
+    float: left;
+}
+.form-input {
+    margin-top: 10px;
+}
+textarea {
+    border-color: #0393ef;
+    border-width: 2px;
+}
+p small a {
+    color: black;
+}
