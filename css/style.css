@@ -1240,9 +1240,9 @@ ul.border-list, .popular-tags ul {
     max-width: 289px;
     margin-top: 24px;
 }
-.navbar {
-    position: inherit;
+.text-center {
+    text-align: center;
 }
-.countdown-wrapper {
-    margin-top: -150px;
+.m-0-a {
+    margin: 0 auto;
 }
