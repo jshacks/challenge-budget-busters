@@ -224,6 +224,9 @@ h6 {
 .mb-100 {
     margin-bottom: 100px !important;
 }
+.mb-150 {
+    margin-bottom: 150px !important;
+}
 .mb-280 {
     margin-bottom: 280px!important;
 }
@@ -895,6 +898,9 @@ h6 {
 }
 .green-bg{
 	background: #39b54a;
+}
+.pink-bg {
+    background: #e9467e;
 }
 .red-bg{
 	background: #e90052 !important;
