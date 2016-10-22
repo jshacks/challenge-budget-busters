@@ -7,4 +7,4 @@
             templateUrl: Global.templatesURL + 'navigation.html'
         }
     });
-})(angular.module('Synyzapo-MBMS'));
+})(angular.module('BudgetBusters'));

@@ -11,4 +11,4 @@
                 redirectTo: Global.pageNotFound
             });
     });
-})(angular.module('Synyzapo-MBMS'));
+})(angular.module('BudgetBusters'));

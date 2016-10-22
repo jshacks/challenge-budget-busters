@@ -4,12 +4,8 @@
     var dependencies = [
         'ui.bootstrap',
         'ngRoute',
-        'Landing',
-        'Account',
-        'Note',
-        'Track',
-        'Message',
+        'Landing'
     ];
 
-    var app = angular.module('Synyzapo-MBMS', dependencies);
+    var app = angular.module('BudgetBusters', dependencies);
 })();

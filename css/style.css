@@ -266,9 +266,9 @@ h6 {
 .ml-30 {
     margin-left: 30px;
 }
-.ml-40 {
+/*.ml-40 {
     margin-left: 40px;
-}
+}*/
 
 
 /*margin left right*/
@@ -1207,4 +1207,20 @@ h6 {
 }
 .bg-img-15{
     background: rgba(0, 0, 0, 0) url("../assets/images/venue-header.jpg") repeat scroll 0 0 ;
+}
+#mc_embed_signup {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.support-widget h3, .quick-link-widget h3, .popular-tags h3 {
+    text-align: left;
+}
+ul.border-list, .popular-tags ul {
+    list-style: none;
+    padding-left: 0px;
+}
+.navbar-brand img {
+    max-width: 289px;
+    margin-top: 24px;
 }
