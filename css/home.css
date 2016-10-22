@@ -1,0 +1,55 @@
+
+/* ================= From Our Blog ==================== */
+.blog-date span b{
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* ================= Subscribe Our Newsletter ==================== */
+input:focus:not([type]):not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="date"]:focus:not([readonly]), input[type="datetime"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="search"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #0393ef;
+  box-shadow: 0 1px 0 0 #0393ef;
+}
+input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="url"], 
+input[type="time"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="tel"], 
+input[type="number"], input[type="search"], textarea.materialize-textarea{
+  border-color: #0393ef;
+}
+*::-moz-placeholder {
+  color: #333;
+}
+*::-webkit-placeholder {
+  color: #171717;
+}
+*::-os-placeholder {
+  color: #333;
+}
+*::-o-placeholder {
+  color: #333;
+}
+.email-subscribe-form .mc-field-group .button {
+  background: #0393ef none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  margin-right: 15px;
+  margin-top: -68px;
+  -webkit-margin-before:-70px !important;
+  padding: 10px 30px;
+  position: absolute;
+  right: 0;
+}
+.email-subscribe-form .mc-field-group .button:hover,
+.email-subscribe-form .mc-field-group .button:focus,
+.email-subscribe-form .mc-field-group .button:active{
+  background: #e90052;
+}
+.required.email{
+  font-size:14px;
+  color: #333;
+}
+.required.email::-webkit-input-placeholder{
+  color: #333;
+}
+.required.email::-moz-input-placeholder{
+  color: #333;
+}

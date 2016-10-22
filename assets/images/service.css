@@ -1,0 +1,14 @@
+/* ================= Service ==================== */
+.info-tabs .nav-tabs li a {
+  color: #0393ef;
+}
+.info-tabs .nav-tabs li.active a, .info-tabs .nav-tabs li.active a:hover, .info-tabs .nav-tabs li.active a:focus{
+  background: #0393ef !important;
+  color: #fff;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.15), 0 5px 10px 5px rgba(0, 0, 0, 0.12);
+}
+.tab-content .tab-content-info p b,
+.shortcode p b{
+  color: #e90052 !important;
+  font-weight: 400;
+}

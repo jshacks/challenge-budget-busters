@@ -1,0 +1,22 @@
+/* ================= Footer Area ==================== */
+
+/* Instagram Image Widget */
+.instagram-image img {
+  height: 86px;
+  width: 86px;
+}
+
+/* Popular Tags Windget */
+.popular-tags ul li:hover{
+  background: #fff !important;
+}
+.popular-tags ul li a {
+  color: #fff;
+}
+.popular-tags ul li:hover a{
+  color: #0393ef;
+}
+.scroll-top{
+	width: 60px;
+	height: 60px;
+}

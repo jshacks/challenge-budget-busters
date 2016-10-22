@@ -1,0 +1,24 @@
+<div id="wrapper">
+
+    <div id="page-wrapper">
+        <div class="container-fluid" id="employees">
+            
+            <h2 class="form-signin-heading">Add Note</h2>
+
+            <div ng-controller="AddNoteController as addNote">
+                <form class="form-add-people" name="noteForm">
+                    <label for="inputTotalAccounts">Total Accounts:</label> 			
+                    <input class="form-control" type="text" name="totalAccounts" ng-model="addNoteForm.totalAccounts"> <br/>
+
+                    <label for="inputBasicAccounts">Basic Accounts:</label>             
+                    <input class="form-control" type="text" name="basicAccounts" ng-model="addNoteForm.basicAccounts"> <br/>
+
+                    <label for="inputBasicAccounts">Premium 1 Accounts:</label>             
+                    <input class="form-control" type="text" name="premium1Accounts" ng-model="addNoteForm.premium1Accounts"> <br/>
+
+                    <button class="btn btn-lg btn-primary" ng-click="submitTheForm()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

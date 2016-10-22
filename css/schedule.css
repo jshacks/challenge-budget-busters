@@ -1,0 +1,9 @@
+/* ================= schedule ==================== */
+
+.schedule-table .nav-tabs li.active a, .schedule-table .nav-tabs li.active a:hover, 
+.schedule-table .nav-tabs li.active a:focus{
+  background: #e90052 !important;
+}
+.schedule-table-area {
+  margin-top: 1px;
+}
