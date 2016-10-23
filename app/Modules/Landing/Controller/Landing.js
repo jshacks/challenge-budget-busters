@@ -43,7 +43,7 @@
         var cheltuieli = [{
                             id: 'curente',
                             name: 'Cheltuieli Curente',
-                            color: '#9969fc'
+                            color: '#b22154'
                         },
                         {
                             id: 'cheltuieli',
@@ -109,12 +109,12 @@
                             id: 'capital',
                             name: 'Cheltuieli de capital',
                             value: 823638,
-                            color: '#fccb69'
+                            color: '#1f21a5'
                         },
                         {
                             name: 'Operatiuni financiare',
                             id: 'operatiuni',
-                            color: '#48f2b9'
+                            color: '#168560'
                         },
                         {
                             id: 'imprumuturi',
@@ -184,7 +184,8 @@
             comment: self.addNewCommentForm.comment,
             photo: Global.host + 'assets/images/01.jpg',
             date: new Date().toJSON().slice(0,10),
-            amount: self.addNewCommentForm.amount
+            amount: self.addNewCommentForm.amount,
+            votes: 0
           };
 
           $scope.comments.unshift(dataObject);
@@ -201,6 +202,14 @@
           // });
         };
 
+        $scope.upVote = function(id) {
+          var result = $.grep($scope.comments, function(e){ return e.id == id; });
+          result[0].votes++;
+        };
 
+        $scope.downVote = function(id) {
+          var result = $.grep($scope.comments, function(e){ return e.id == id; });
+          result[0].votes--;
+        };
     }]);
 })();

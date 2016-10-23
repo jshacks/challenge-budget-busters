@@ -49,6 +49,8 @@ body{
 .panel-footer .data {
     display:inline-block;
     float:right;
+    color:#e28;
+    font-weight:bold;
 }
 .panel-footer .author {
     width:70%;display:inline-block
