@@ -73,10 +73,10 @@
                           </a>
                           <div class="media-body">
 
-                            <h4 class="media-heading user_name">{{ comment.name }} - {{ comment.amount }}</h4>
+                            <h4 class="media-heading user_name">{{ comment.name }} - {{ comment.value }} RON</h4>
                             {{ comment.comment }}
 
-                            <p><small><a ng-click="upVote(comment.id)">Upvote</a> - <a ng-click="downVote(comment.id)">Downvote</a></small></p>
+                            <p><small><a ng-click="upVote(comment._id)">Upvote</a> - <a ng-click="downVote(comment._id)">Downvote</a></small></p>
                           </div>
                         </div>
                    </div>

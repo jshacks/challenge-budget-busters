@@ -29,7 +29,13 @@
         $scope.getComments = function (id) {
             $http.get('/api/proposals?id=' + id)
               .then(
-              function (response) { $scope.comments = response.data; },
+              function (response) {
+                  for (var i = 0; i < response.data.length; i++) {
+                      var date = new Date(response.data[i].date);
+                      response.data[i].date = date.toDateString();
+                  } 
+                  $scope.comments = response.data;
+                },
               function (failure) { console.log("failed :(", failure) } );
         }
 
@@ -203,13 +209,13 @@
         };
 
         $scope.upVote = function(id) {
-          var result = $.grep($scope.comments, function(e){ return e.id == id; });
-          result[0].votes++;
+          var result = $.grep($scope.comments, function(e){ return e._id == id; });
+          result[0].upVotes++;
         };
 
         $scope.downVote = function(id) {
-          var result = $.grep($scope.comments, function(e){ return e.id == id; });
-          result[0].votes--;
+          var result = $.grep($scope.comments, function(e){ return e._id == id; });
+          result[0].downVotes++;
         };
     }]);
 })();
