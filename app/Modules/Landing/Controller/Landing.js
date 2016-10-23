@@ -41,7 +41,7 @@
 
         $scope.addComment = function () {
             var data = this.newBudget.addNewCommentForm; 
-            data.id = this.newBudget.currentId;
+            data.id = $scope.currentId;
             $http.post('/api/proposals', data);
             $scope.getComments(data.id);
         }
@@ -168,7 +168,7 @@
                             $('#categoryTitle').text(event.point.name);
                             $('#categoryValue').text(event.point.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' RON');
                             $scope.getComments(event.point.id);
-                            this.currentId = event.point.id;
+                            $scope.currentId = event.point.id;
                         }
                     }
                 }],
@@ -181,7 +181,7 @@
 
         this.addNewCommentForm = {};
 
-        this.currentId = 0;
+        $scope.currentId = 'curente';
 
         $scope.submitTheForm = function() {
           var dataObject = {
