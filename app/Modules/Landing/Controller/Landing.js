@@ -10,6 +10,12 @@
     app.controller('NewBudgetController', ['$scope', '$http', '$window', '$location', '$routeParams', function($scope, $http, $window, $location, $routeParams) {
         var self = this;
 
+        $scope.getComments = function () {
+            $http.get('/api', { params: user },
+              function (response) { $scope.results = response; },
+              function (failure) { console.log("failed :(", failure); });
+        }
+
         $scope.comments = [
               {
                 id: 1,
