@@ -963,7 +963,9 @@ h6 {
     width: 75%;
     line-height: 24px;
 }
-
+.w-100 {
+    width: 100%;
+}
 
 /* Box-shadow */
 .box-shadow-10{
