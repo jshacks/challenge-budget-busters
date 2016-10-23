@@ -1,14 +1,14 @@
 (function(app) {
 	'use strict';
 
-    app.directive('head', function() {
+    app.directive('headComp', function() {
         return {
             restrict: 'E',
             templateUrl: Global.templatesURL + 'head.html'
         }
     });
 
-		app.directive('foot', function() {
+		app.directive('footComp', function() {
         return {
             restrict: 'E',
             templateUrl: Global.templatesURL + 'foot.html'
