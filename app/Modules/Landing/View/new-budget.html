@@ -46,12 +46,12 @@
             </div>
             <div class="col-lg-12 form-input">
               <label>Suma:</label>
-              <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.amount">
+              <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.value">
             </div>
             <div class="col-lg-12 form-input">
                 <label>Motivare:</label>
                 <textarea rows="5" cols="56" class="col-lg-12" ng-model="newBudget.addNewCommentForm.comment"></textarea>
-                <button ng-click="submitTheForm()" type="submit" class="btn btn-default pink-bg white-text left margin-top-10">TRIMITE PROPUNERE</button>
+                <button ng-click="addComment()" type="submit" class="btn btn-default pink-bg white-text left margin-top-10">TRIMITE PROPUNERE</button>
             </div>
           </form>
        </div>
@@ -65,7 +65,7 @@
                    <div class="comments-list">
                      <div ng-repeat="comment in comments" class="media">
                          <p class="pull-right"><small> {{ comment.date }}</small></p>
-                         <span class="votes">{{ comment.votes }}</span>
+                         <span class="votes">{{ comment.upVotes - comment.downVotes }}</span>
                           <a class="media-left" href="#">
                             <img ng-src="{{ comment.photo }}">
                           </a>

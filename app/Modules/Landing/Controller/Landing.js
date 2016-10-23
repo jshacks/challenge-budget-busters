@@ -26,96 +26,116 @@
     app.controller('NewBudgetController', ['$scope', '$http', '$window', '$location', '$routeParams', function($scope, $http, $window, $location, $routeParams) {
         var self = this;
 
-        $scope.getComments = function () {
-            $http.get('/api/proposals')
+        $scope.getComments = function (id) {
+            $http.get('/api/proposals?id=' + id)
               .then(
-              function (response) { $scope.comments = response; },
+              function (response) { $scope.comments = response.data; },
               function (failure) { console.log("failed :(", failure) } );
+        }
+
+        $scope.addComment = function () {
+            var data = this.newBudget.addNewCommentForm; 
+            data.id = this.newBudget.currentId;
+            $http.post('/api/proposals', data);
+            $scope.getComments(data.id);
         }
 
         var cheltuieli = [{
                             id: 'curente',
                             name: 'Cheltuieli Curente',
-                            color: '#00FF00'
+                            color: '#9969fc'
                         },
                         {
+                            id: 'cheltuieli',
                             name: 'Cheltuieli de personal',
                             parent: 'curente',
                             value: 117366
                         },
                         {
+                            id: 'bunuri',
                             name: 'Bunuri si servicii',
                             parent: 'curente',
                             value: 590569
                         },
                         {
+                            id: 'dobanzi',
                             name: 'Dobanzi',
                             parent: 'curente',
                             value: 124540
                         },
                         {
+                            id: 'subventii',
                             name: 'Subventii',
                             parent: 'curente',
                             value: 1059000
                         },
                         {
+                            id: 'fonduri',
                             name: 'Fonduri de rezerva',
                             parent: 'curente',
                             value: 12175
                         },
                         {
+                            id: 'transferuri',
                             name: 'Transferuri intre unitati ale administratiei',
                             parent: 'curente',
                             value: 627437
                         },
                         {
+                            id: 'alteTransferuri',
                             name: 'Alte transferuri',
                             parent: 'curente',
                             value: 73878
                         },
                         {
+                            id: 'proiecte',
                             name: 'Proiecte cu finantare din Fonduri externe nerambursabile postaderare',
                             parent: 'curente',
                             value: 463174
                         },
                         {
+                            id: 'asistenta',
                             name: 'Asistenta sociala',
                             parent: 'curente',
                             value: 1682
                         },
                         {
+                            id: 'alteCheltuieli',
                             name: 'Alte cheltuieli',
                             parent: 'curente',
                             value: 112860
                         },
                         {
+                            id: 'capital',
                             name: 'Cheltuieli de capital',
                             value: 823638,
-                            color: '#0000FF'
+                            color: '#fccb69'
                         },
                         {
                             name: 'Operatiuni financiare',
                             id: 'operatiuni',
-                            color: '#FF0000'
+                            color: '#48f2b9'
                         },
                         {
+                            id: 'imprumuturi',
                             name: 'Imprumuturi acordate',
                             parent: 'operatiuni',
                             value: 0
                         },
                         {
+                            id: 'rambursari',
                             name: 'Rambursari de credite externe si interne',
                             parent: 'operatiuni',
                             value: 133677
                         },
                         {
+                            id: 'precedenti',
                             name: 'Plati efectuate in anii precedenti si recuperate in anul curent',
-                            color: '#FFFF00',
                             value: 0
                         },
                         {
+                            id: 'rezerve',
                             name: 'Rezerve',
-                            color: '#00FFFF',
                             value: 0
                         }];
 
@@ -141,7 +161,8 @@
                         click: function (event) {
                             $('#categoryTitle').text(event.point.name);
                             $('#categoryValue').text(event.point.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' RON');
-                            $scope.getComments();
+                            $scope.getComments(event.point.id);
+                            this.currentId = event.point.id;
                         }
                     }
                 }],
@@ -153,6 +174,8 @@
         $scope.comments = [];
 
         this.addNewCommentForm = {};
+
+        this.currentId = 0;
 
         $scope.submitTheForm = function() {
           var dataObject = {
