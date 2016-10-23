@@ -4,7 +4,8 @@
     var dependencies = [
         'ui.bootstrap',
         'ngRoute',
-        'Landing'
+        'Landing',
+        'countUpModule'
     ];
 
     var app = angular.module('BudgetBusters', dependencies);

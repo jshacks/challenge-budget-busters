@@ -10,8 +10,8 @@
   <div class="container" ng-controller="NewBudgetController as newBudget">
     <div class="col-lg-12">
      <div class="col-lg-6">
-       <h4 class="mt-20 font-25 dark-purple-text col-lg-6">Cheltuieli</h4>
-       <h4 class="mt-20 font-25 dark-purple-text col-lg-6">33 000 euro</h4>
+       <h4 id="categoryTitle" class="mt-20 font-25 dark-purple-text col-lg-6">Cheltuieli</h4>
+       <h4 id="categoryValue" class="mt-20 font-25 dark-purple-text col-lg-6">4.139.998 RON</h4>
        <h4 class="mt-20 font-25 dark-purple-text col-lg-12">Propunere de modificare</h4>
        <div class="col-lg-12">
           <form name="addCommentForm">
@@ -107,7 +107,128 @@
         </div>
        </div>
      </div>
-     <div class="col-lg-6"></div>
+     <div class="col-lg-6">
+       <div id="container"></div>
+      </div>
    </div>
   </div>
-<foot-comp></foot-comp>
+  <foot-comp></foot-comp>
+  <script>
+  var cheltuieli = [{
+                      id: 'curente',
+                      name: 'Cheltuieli Curente',
+                      color: '#00FF00'
+                  },
+                  {
+                      name: 'Personal',
+                      parent: 'curente',
+                      value: 117366
+                  },
+                  {
+                      name: 'Bunuri',
+                      parent: 'curente',
+                      value: 590569
+                  },
+                  {
+                      name: 'Dobanzi',
+                      parent: 'curente',
+                      value: 124540
+                  },
+                  {
+                      name: 'Subventii',
+                      parent: 'curente',
+                      value: 1059000
+                  },
+                  {
+                      name: 'Rezerva',
+                      parent: 'curente',
+                      value: 12175
+                  },
+                  {
+                      name: 'Transferuri',
+                      parent: 'curente',
+                      value: 627437
+                  },
+                  {
+                      name: 'Alte Transferuri',
+                      parent: 'curente',
+                      value: 73878
+                  },
+                  {
+                      name: 'Proiecte Finantate din Fonduri Nerambursabile Europene',
+                      parent: 'curente',
+                      value: 463174
+                  },
+                  {
+                      name: 'Asistenta Sociala',
+                      parent: 'curente',
+                      value: 1682
+                  },
+                  {
+                      name: 'Alte Cheltuieli',
+                      parent: 'curente',
+                      value: 112860
+                  },
+                  {
+                      name: 'Capital',
+                      value: 823638,
+                      color: '#0000FF'
+                  },
+                  {
+                      name: 'Operatiuni Financiare',
+                      id: 'operatiuni',
+                      color: '#FF0000'
+                  },
+                  {
+                      name: 'Imprumuturi Acordate',
+                      parent: 'operatiuni',
+                      value: 0
+                  },
+                  {
+                      name: 'Rambursari Credite',
+                      parent: 'operatiuni',
+                      value: 133677
+                  },
+                  {
+                      name: 'Plati Efectuate Si Recuperate',
+                      color: '#FFFF00',
+                      value: 0
+                  },
+                  {
+                      name: 'Rezerve',
+                      color: '#00FFFF',
+                      value: 0
+                  }];
+  
+  $(function () {
+      $('#container').highcharts({
+          series: [{
+              type: 'treemap',
+              layoutAlgorithm: 'squarified',
+              allowDrillToNode: true,
+              animationLimit: 1000,
+              dataLabels: {
+                  enabled: false
+              },
+              levelIsConstant: false,
+              levels: [{
+                  level: 1,
+                  dataLabels: {
+                      enabled: true
+                  },
+                  borderWidth: 3
+              }],
+              data: cheltuieli,
+              events: {
+                  click: function (event) {
+                      $('#categoryTitle').text(event.point.name);
+                      $('#categoryValue').text(event.point.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' RON');
+                  }
+              }
+          }],
+          title: {
+              text: 'Bugetul Municipiului Bucuresti - Cheltuieli'
+          }
+      });
+  });
+  </script>
