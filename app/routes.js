@@ -15,6 +15,10 @@
                 templateUrl: Global.Modules.Landing + 'View/new-budget.html',
                 controller: 'LandingController'
             })
+                        .when('/spending-updates', {
+                templateUrl: Global.Modules.Landing + 'View/spending-updates.html',
+                controller: 'LandingController'
+            })
             .otherwise({
                 redirectTo: Global.pageNotFound
             });

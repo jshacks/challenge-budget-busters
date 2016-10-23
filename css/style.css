@@ -1312,3 +1312,7 @@ textarea {
 p small a {
     color: black;
 }
+.primarie-icon{
+    max-width:64px;
+    max-height:64px;
+}
