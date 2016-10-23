@@ -8,16 +8,21 @@
 
 
   <div class="container" ng-controller="NewBudgetController as newBudget">
-    <div class="col-lg-12">
-     <div class="col-lg-6">
+    <div class="col-lg-6">
+     <div class="col-lg-12">
        <h4 id="categoryTitle" class="mt-20 font-25 dark-purple-text col-lg-6">Cheltuieli</h4>
        <h4 id="categoryValue" class="mt-20 font-25 dark-purple-text col-lg-6">4.139.998 RON</h4>
        <h4 class="mt-20 font-25 dark-purple-text col-lg-12">Propunere de modificare</h4>
-       <div class="col-lg-12">
+       <div class="col-lg-6">
           <form name="addCommentForm">
             <div class="col-lg-12 form-input">
+            </div>
               <label>Nume:</label>
               <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.name">
+            </div>
+            <div class="col-lg-12 form-input">
+              <label>Suma:</label>
+              <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.amount">
             </div>
             <div class="col-lg-12 form-input">
                 <label>Motivare:</label>
@@ -41,7 +46,7 @@
                           </a>
                           <div class="media-body">
 
-                            <h4 class="media-heading user_name">{{ comment.name }}</h4>
+                            <h4 class="media-heading user_name">{{ comment.name }} - {{ comment.amount }}</h4>
                             {{ comment.comment }}
 
                             <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
