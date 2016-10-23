@@ -211,11 +211,15 @@
         $scope.upVote = function(id) {
           var result = $.grep($scope.comments, function(e){ return e._id == id; });
           result[0].upVotes++;
+          var data = { 'upVotes': 1 };
+          $http.put('/api/proposals/' + id, data);          
         };
 
         $scope.downVote = function(id) {
           var result = $.grep($scope.comments, function(e){ return e._id == id; });
           result[0].downVotes++;
+          var data = { 'downVotes': 1 };
+          $http.put('/api/proposals/' + id, data);          
         };
     }]);
 })();
