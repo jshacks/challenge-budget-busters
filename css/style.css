@@ -38,6 +38,9 @@ body{
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased !important;
 }
+.project-update {
+    margin-bottom:30px;
+}
 .countdown-wrapper {
     text-shadow: 0px 2px 3px rgba(0,0,0,.3);
     color:#fff;
@@ -824,6 +827,10 @@ h6 {
     text-transform: justify;
 }
 
+.d-ib {
+    display: inline-block;
+}
+
 
 /* ================= Colors ==================== */
 
@@ -1328,4 +1335,10 @@ p small a {
 .primarie-icon{
     max-width:64px;
     max-height:64px;
+}
+.votes {
+    font-weight: bold;
+    float: left;
+    padding-right: 10px;
+    font-size: 30px;
 }

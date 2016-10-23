@@ -11,9 +11,9 @@
         var date2 = new Date(2016, 11, 7);
         var diff = new Date(date2.getTime() - date1.getTime());
 
-        
+
         $interval(function(){
-          //diff = diff - 
+          //diff = diff -
           diff.setSeconds(diff.getSeconds() - 1);
           $scope.days = diff.getUTCDate()-1; // Gives day count of difference
           $scope.hours =  diff.getHours();
