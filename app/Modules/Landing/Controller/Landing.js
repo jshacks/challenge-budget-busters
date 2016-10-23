@@ -3,8 +3,24 @@
 
     var app = angular.module('Landing', []);
 
-    app.controller('LandingController', ['$scope', '$http', '$window', '$location', '$routeParams', function($scope, $http, $window, $location, $routeParams) {
+    app.controller('LandingController', ['$scope', '$http', '$window', '$location', '$routeParams','$interval', function($scope, $http, $window, $location, $routeParams,$interval) {
         $scope.landing = {};
+
+        $scope.radu = 'works';
+        var date1 = new Date();
+        var date2 = new Date(2016, 11, 7);
+        var diff = new Date(date2.getTime() - date1.getTime());
+
+        
+        $interval(function(){
+          //diff = diff - 
+          diff.setSeconds(diff.getSeconds() - 1);
+          $scope.days = diff.getUTCDate()-1; // Gives day count of difference
+          $scope.hours =  diff.getHours();
+          $scope.minutes = diff.getMinutes();
+          $scope.seconds = diff.getSeconds();
+        },1000);
+
     }]);
 
     app.controller('NewBudgetController', ['$scope', '$http', '$window', '$location', '$routeParams', function($scope, $http, $window, $location, $routeParams) {
