@@ -38,7 +38,10 @@ body{
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased !important;
 }
-
+.countdown-wrapper {
+    text-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    color:#fff;
+}
 
 /*----------- Link style------------*/
 a {
@@ -975,6 +978,9 @@ h6 {
 .w-100 {
     width: 100%;
 }
+.width-100 {
+    width: 100px;
+}
 
 /* Box-shadow */
 .box-shadow-10{
@@ -1316,13 +1322,10 @@ textarea {
 p small a {
     color: black;
 }
-<<<<<<< HEAD
 .media-left img {
     max-width: 40px;
 }
-=======
 .primarie-icon{
     max-width:64px;
     max-height:64px;
 }
->>>>>>> 00da7e6d027c522542327baed83d5d3e9d2ebad5
