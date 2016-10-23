@@ -824,6 +824,10 @@ h6 {
     text-transform: justify;
 }
 
+.d-ib {
+    display: inline-block;
+}
+
 
 /* ================= Colors ==================== */
 
