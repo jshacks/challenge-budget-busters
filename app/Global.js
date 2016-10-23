@@ -7,7 +7,7 @@ function Global() { }
 // live
 
 // localhost:
-Global.host = 'http://localhost/challenge-budget-busters/';
+Global.host = 'http://localhost:8080/';
 
 /*
 	Modules

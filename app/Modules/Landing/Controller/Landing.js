@@ -26,6 +26,8 @@
     app.controller('NewBudgetController', ['$scope', '$http', '$window', '$location', '$routeParams', function($scope, $http, $window, $location, $routeParams) {
         var self = this;
 
+        var photos = ['01.jpg', '02.jpg', '03.jpg', '04.jpg'];
+
         $scope.getComments = function (id) {
             $http.get('/api/proposals?id=' + id)
               .then(
@@ -33,6 +35,7 @@
                   for (var i = 0; i < response.data.length; i++) {
                       var date = new Date(response.data[i].date);
                       response.data[i].date = date.toDateString();
+                      response.data[i].photo = Global.host + 'assets/images/' + photos[i%4];
                   } 
                   $scope.comments = response.data;
                 },
