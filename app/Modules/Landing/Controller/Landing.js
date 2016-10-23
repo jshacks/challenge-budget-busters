@@ -11,9 +11,9 @@
         var date2 = new Date(2016, 11, 7);
         var diff = new Date(date2.getTime() - date1.getTime());
 
-        
+
         $interval(function(){
-          //diff = diff - 
+          //diff = diff -
           diff.setSeconds(diff.getSeconds() - 1);
           $scope.days = diff.getUTCDate()-1; // Gives day count of difference
           $scope.hours =  diff.getHours();
@@ -33,7 +33,8 @@
                 photo: 'http://lorempixel.com/40/40/people/1/',
                 comment: 'Mai multi bani pentru biserici!!!!',
                 date: '2016-10-23',
-                amount: '9455 lei'
+                amount: '9455 lei',
+                votes: 10
               },
               {
                 id: 2,
@@ -41,7 +42,8 @@
                 photo: 'http://lorempixel.com/40/40/people/2/',
                 comment: 'Pentru spitale cred ca e prea mare bugetul.',
                 date: '2016-10-23',
-                amount: '158700 lei'
+                amount: '158700 lei',
+                votes: 15
               },
               {
                 id: 3,
@@ -49,7 +51,8 @@
                 photo: 'http://lorempixel.com/40/40/people/3/',
                 comment: 'Trebuie sa luam tot bugetul alocat pentru biserici si sa-l folosim pentru modernizarea cluburilor.',
                 date: '2016-10-22',
-                amount: '1500 lei'
+                amount: '1500 lei',
+                votes: 17
               },
               {
                 id: 4,
@@ -57,7 +60,8 @@
                 photo: 'http://lorempixel.com/40/40/people/4/',
                 comment: 'De ce suntem asa saraci??? Vrem mai multi bani pentru scoli!',
                 date: '2016-10-22',
-                amount: '2000 lei'
+                amount: '2000 lei',
+                votes: 20
               },
             ];
 

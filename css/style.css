@@ -1329,3 +1329,9 @@ p small a {
     max-width:64px;
     max-height:64px;
 }
+.votes {
+    font-weight: bold;
+    float: left;
+    padding-right: 10px;
+    font-size: 30px;
+}
