@@ -2,7 +2,31 @@
 
   <div class="section-title text-center">
       <h1 class="dark-purple-text font-40 text-semibold text-uppercase">Bugetul pentru 2017 a fost propus!</h1>
-      <p class="padding-lf-24 font-20">Ai la dispozitie 14 zile - 12 ore - 30 minute - 15 secunde sa il inalizezi si sa te implici</p>
+
+      <ul id="countdown" class="mb-150">
+          <li class="display-inline-block margin-lr-30">
+              <span class="days dark-purple-text font-60 text-extrabold font-roboto">{{days}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">zile</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="hours dark-purple-text font-60 text-extrabold font-roboto ng-isolate-scope" >{{hours}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">ore</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="minutes dark-purple-text font-60 text-extrabold font-roboto ng-isolate-scope" >{{minutes}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">minute</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="seconds dark-purple-text font-60 text-extrabold font-roboto ng-isolate-scope">{{seconds}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">secunde</p>
+          </li>
+      </ul>
+
+
+      <!-- <p class="padding-lf-24 font-20">Ai la dispozitie 14 zile - 12 ore - 30 minute - 15 secunde sa il inalizezi si sa te implici</p> -->
       <p class="padding-lf-24 font-20">Vezi beneficiile obtinute in <a href="#/last-year-budget">2016</a></p>
   </div> <!-- section-title -->
 
