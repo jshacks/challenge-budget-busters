@@ -75,7 +75,7 @@
         var cheltuieli = [{
                             id: 'curente',
                             name: 'Cheltuieli Curente',
-                            color: '#00FF00'
+                            color: '#b22154'
                         },
                         {
                             name: 'Cheltuieli de personal',
@@ -130,12 +130,12 @@
                         {
                             name: 'Cheltuieli de capital',
                             value: 823638,
-                            color: '#0000FF'
+                            color: '#1f21a5'
                         },
                         {
                             name: 'Operatiuni financiare',
                             id: 'operatiuni',
-                            color: '#FF0000'
+                            color: '#168560'
                         },
                         {
                             name: 'Imprumuturi acordate',
