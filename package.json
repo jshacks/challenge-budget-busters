@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "budgetbusters",
   "version": "0.1.0",
-  "description": "A JSHacks boilerplate for setting up projects in a consistent way",
+  "description": "Analyzing local budgets for greater good",
   "main": "src/index.js",
   "directories": {
     "doc": "docs"
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jshacks/boilerplate.git"
+    "url": "git+https://github.com/jshacks/challenge-budget-busters.git"
   },
   "keywords": [
     "jshacks",
@@ -28,9 +28,9 @@
   "author": "JSHacks <contact@jshacks.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jshacks/boilerplate/issues"
+    "url": "https://github.com/jshacks/challenge-budget-busters/issues"
   },
-  "homepage": "https://github.com/jshacks/boilerplate#readme",
+  "homepage": "https://github.com/jshacks/challenge-budget-busters#readme",
   "dependencies": {
     "hapi": "^15.2.0",
     "inert": "^4.0.2",

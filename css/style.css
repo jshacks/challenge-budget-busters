@@ -827,6 +827,10 @@ h6 {
     text-transform: justify;
 }
 
+.d-ib {
+    display: inline-block;
+}
+
 
 /* ================= Colors ==================== */
 
@@ -1325,13 +1329,16 @@ textarea {
 p small a {
     color: black;
 }
-<<<<<<< HEAD
 .media-left img {
     max-width: 40px;
 }
-=======
 .primarie-icon{
     max-width:64px;
     max-height:64px;
 }
->>>>>>> 00da7e6d027c522542327baed83d5d3e9d2ebad5
+.votes {
+    font-weight: bold;
+    float: left;
+    padding-right: 10px;
+    font-size: 30px;
+}

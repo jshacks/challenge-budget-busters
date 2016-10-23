@@ -2,25 +2,54 @@
 
   <div class="section-title text-center">
       <h1 class="dark-purple-text font-40 text-semibold text-uppercase">Bugetul pentru 2017 a fost propus!</h1>
-      <p class="padding-lf-24 font-20">Ai la dispozitie 14 zile - 12 ore - 30 minute - 15 secunde sa il inalizezi si sa te implici</p>
+
+      <ul id="countdown" class="mb-150">
+          <li class="display-inline-block margin-lr-30">
+              <span class="days dark-purple-text font-60 text-extrabold font-roboto">{{days}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">zile</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="hours dark-purple-text font-60 text-extrabold font-roboto" >{{hours}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">ore</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="minutes dark-purple-text font-60 text-extrabold font-roboto" >{{minutes}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">minute</p>
+          </li>
+
+          <li class="display-inline-block margin-lr-30">
+              <span class="seconds dark-purple-text font-60 text-extrabold font-roboto">{{seconds}}</span>
+              <p class="text-semibold dark-purple-text text-uppercase">secunde</p>
+          </li>
+      </ul>
+
+
+      <!-- <p class="padding-lf-24 font-20">Ai la dispozitie 14 zile - 12 ore - 30 minute - 15 secunde sa il inalizezi si sa te implici</p> -->
       <p class="padding-lf-24 font-20">Vezi beneficiile obtinute in <a href="#/last-year-budget">2016</a></p>
   </div> <!-- section-title -->
 
 
   <div class="container" ng-controller="NewBudgetController as newBudget">
-    <div class="col-lg-12">
-     <div class="col-lg-6">
+    <div class="col-lg-6">
+     <div class="col-lg-12">
        <h4 id="categoryTitle" class="mt-20 font-25 dark-purple-text col-lg-6">Cheltuieli</h4>
        <h4 id="categoryValue" class="mt-20 font-25 dark-purple-text col-lg-6">4.139.998 RON</h4>
        <h4 class="mt-20 font-25 dark-purple-text col-lg-12">Propunere de modificare</h4>
-       <div class="col-lg-12">
+       <div class="col-lg-6">
           <form name="addCommentForm">
             <div class="col-lg-12 form-input">
+            </div>
               <label>Nume:</label>
               <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.name">
             </div>
             <div class="col-lg-12 form-input">
-                <label>Propunere:</label>
+              <label>Suma:</label>
+              <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.amount">
+            </div>
+            <div class="col-lg-12 form-input">
+                <label>Motivare:</label>
                 <textarea rows="5" cols="56" class="col-lg-12" ng-model="newBudget.addNewCommentForm.comment"></textarea>
                 <button ng-click="submitTheForm()" type="submit" class="btn btn-default pink-bg white-text left margin-top-10">TRIMITE PROPUNERE</button>
             </div>
@@ -31,73 +60,23 @@
             <div class="row">
                 <div class="col-md-8">
                   <div class="page-header">
-                    <h1><small class="pull-right">45 propuneri</small> Propuneri pe aceeasi tema </h1>
+                    <h1><small class="pull-right">{{ comments.length }} propuneri</small> Propuneri pe aceeasi tema </h1>
                   </div>
                    <div class="comments-list">
                      <div ng-repeat="comment in comments" class="media">
                          <p class="pull-right"><small> {{ comment.date }}</small></p>
+                         <span class="votes">{{ comment.votes }}</span>
                           <a class="media-left" href="#">
                             <img ng-src="{{ comment.photo }}">
                           </a>
                           <div class="media-body">
 
-                            <h4 class="media-heading user_name">{{ comment.name }}</h4>
+                            <h4 class="media-heading user_name">{{ comment.name }} - {{ comment.amount }}</h4>
                             {{ comment.comment }}
 
                             <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                           </div>
                         </div>
-                       <!-- <div class="media">
-                           <p class="pull-right"><small>5 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/1/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Eusebiu Schipor</h4>
-                              Mai multi bani pentru biserici!!!!
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>5 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/2/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Mihail Serafim</h4>
-                              Pentru spitale cred ca e prea mare bugetul.
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>6 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/3/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Paul Raetchi</h4>
-                              Trebuie sa luam tot bugetul alocat pentru biserici si sa-l folosim pentru modernizarea cluburilor.
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>6 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/4/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Bogdan Luca</h4>
-                              De ce suntem asa saraci??? Vrem mai multi bani pentru scoli!
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div> -->
                    </div>
 
 
@@ -199,7 +178,7 @@
                       color: '#00FFFF',
                       value: 0
                   }];
-  
+
   $(function () {
       $('#container').highcharts({
           series: [{
