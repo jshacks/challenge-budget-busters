@@ -20,7 +20,7 @@
               <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.name">
             </div>
             <div class="col-lg-12 form-input">
-                <label>Propunere:</label>
+                <label>Motivare:</label>
                 <textarea rows="5" cols="56" class="col-lg-12" ng-model="newBudget.addNewCommentForm.comment"></textarea>
                 <button ng-click="submitTheForm()" type="submit" class="btn btn-default pink-bg white-text left margin-top-10">TRIMITE PROPUNERE</button>
             </div>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-8">
                   <div class="page-header">
-                    <h1><small class="pull-right">45 propuneri</small> Propuneri pe aceeasi tema </h1>
+                    <h1><small class="pull-right">{{ comments.length }} propuneri</small> Propuneri pe aceeasi tema </h1>
                   </div>
                    <div class="comments-list">
                      <div ng-repeat="comment in comments" class="media">
@@ -47,57 +47,6 @@
                             <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                           </div>
                         </div>
-                       <!-- <div class="media">
-                           <p class="pull-right"><small>5 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/1/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Eusebiu Schipor</h4>
-                              Mai multi bani pentru biserici!!!!
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>5 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/2/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Mihail Serafim</h4>
-                              Pentru spitale cred ca e prea mare bugetul.
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>6 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/3/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Paul Raetchi</h4>
-                              Trebuie sa luam tot bugetul alocat pentru biserici si sa-l folosim pentru modernizarea cluburilor.
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div>
-                       <div class="media">
-                           <p class="pull-right"><small>6 zile in urma</small></p>
-                            <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/4/">
-                            </a>
-                            <div class="media-body">
-
-                              <h4 class="media-heading user_name">Bogdan Luca</h4>
-                              De ce suntem asa saraci??? Vrem mai multi bani pentru scoli!
-
-                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
-                            </div>
-                          </div> -->
                    </div>
 
 
@@ -199,7 +148,7 @@
                       color: '#00FFFF',
                       value: 0
                   }];
-  
+
   $(function () {
       $('#container').highcharts({
           series: [{
