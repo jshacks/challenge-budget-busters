@@ -16,7 +16,10 @@ var proposalSchema = new Schema({
     id: String,
     name: String,
     comment: String,
-    value: Number
+    value: Number,
+    date: { type: Date, default: Date.now },
+    upVotes: { type: Number, default: 0 },
+    downVotes: { type: Number, default: 0 }
 });
 var proposal = mongoose.model('proposal', proposalSchema);
 
@@ -99,6 +102,37 @@ server.register(require('inert'), function(err) {
                     sendError(reply, err);
                 } else {
                     reply(obj);
+                }
+            });
+        }
+    });
+
+    server.route({
+        method: 'PUT',
+        path: '/api/proposals/{id}',
+        handler: function(request, reply) {
+            proposal.findOne({ _id: request.params.id }, function(err, obj) {
+                if (obj) {
+                    var upVotes = request.payload.upVotes;
+                    var downVotes = request.payload.downVotes;
+
+                    if (upVotes && upVotes > 0) {
+                        obj.upVotes++;
+                    }
+
+                    if (downVotes && downVotes > 0) {
+                        obj.downVotes++;
+                    }
+
+                    obj.save(function (err) {
+                        if (err) {
+                            sendError(reply, err);
+                        } else {
+                            reply(obj);
+                        }
+                    });
+                } else {
+                    reply().code(404);
                 }
             });
         }
