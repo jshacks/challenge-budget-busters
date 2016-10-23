@@ -46,6 +46,18 @@ body{
     color:#fff;
 }
 
+.panel-footer .data {
+    display:inline-block;
+    float:right;
+}
+.panel-footer .author {
+    width:70%;display:inline-block
+}
+.countdown-wrapper {
+    text-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    color:#fff;
+}
+
 /*----------- Link style------------*/
 a {
     color: #fff;
