@@ -7,21 +7,24 @@
   </div> <!-- section-title -->
 
 
-  <div class="container">
+  <div class="container" ng-controller="NewBudgetController as newBudget">
     <div class="col-lg-12">
      <div class="col-lg-6">
        <h4 class="mt-20 font-25 dark-purple-text col-lg-6">Cheltuieli</h4>
        <h4 class="mt-20 font-25 dark-purple-text col-lg-6">33 000 euro</h4>
        <h4 class="mt-20 font-25 dark-purple-text col-lg-12">Propunere de modificare</h4>
        <div class="col-lg-12">
-          <div class="col-lg-12 form-input">
-            <label>Nume:</label>
-            <input type="text" class="col-lg-12">
-          </div>
-          <div class="col-lg-12 form-input">
-            <label>Propunere:</label>
-            <textarea rows="5" cols="56" class="col-lg-12"></textarea>
-          </div>
+          <form name="addCommentForm">
+            <div class="col-lg-12 form-input">
+              <label>Nume:</label>
+              <input type="text" class="col-lg-12" ng-model="newBudget.addNewCommentForm.name">
+            </div>
+            <div class="col-lg-12 form-input">
+                <label>Propunere:</label>
+                <textarea rows="5" cols="56" class="col-lg-12" ng-model="newBudget.addNewCommentForm.comment"></textarea>
+                <button ng-click="submitTheForm()" type="submit" class="btn btn-default pink-bg white-text left margin-top-10">TRIMITE PROPUNERE</button>
+            </div>
+          </form>
        </div>
        <div class="col-lg-12">
          <div class="container">
@@ -31,17 +34,30 @@
                     <h1><small class="pull-right">45 propuneri</small> Propuneri pe aceeasi tema </h1>
                   </div>
                    <div class="comments-list">
-                       <div class="media">
+                     <div ng-repeat="comment in comments" class="media">
+                         <p class="pull-right"><small> {{ comment.date }}</small></p>
+                          <a class="media-left" href="#">
+                            <img ng-src="{{ comment.photo }}">
+                          </a>
+                          <div class="media-body">
+
+                            <h4 class="media-heading user_name">{{ comment.name }}</h4>
+                            {{ comment.comment }}
+
+                            <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
+                          </div>
+                        </div>
+                       <!-- <div class="media">
                            <p class="pull-right"><small>5 zile in urma</small></p>
                             <a class="media-left" href="#">
                               <img src="http://lorempixel.com/40/40/people/1/">
                             </a>
                             <div class="media-body">
 
-                              <h4 class="media-heading user_name">Baltej Singh</h4>
-                              Wow! this is really great.
+                              <h4 class="media-heading user_name">Eusebiu Schipor</h4>
+                              Mai multi bani pentru biserici!!!!
 
-                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                             </div>
                           </div>
                        <div class="media">
@@ -51,10 +67,9 @@
                             </a>
                             <div class="media-body">
 
-                              <h4 class="media-heading user_name">Baltej Singh</h4>
-                              Wow! this is really great.
-
-                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                              <h4 class="media-heading user_name">Mihail Serafim</h4>
+                              Pentru spitale cred ca e prea mare bugetul.
+                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                             </div>
                           </div>
                        <div class="media">
@@ -64,25 +79,25 @@
                             </a>
                             <div class="media-body">
 
-                              <h4 class="media-heading user_name">Baltej Singh</h4>
-                              Wow! this is really great.
+                              <h4 class="media-heading user_name">Paul Raetchi</h4>
+                              Trebuie sa luam tot bugetul alocat pentru biserici si sa-l folosim pentru modernizarea cluburilor.
 
-                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                             </div>
                           </div>
                        <div class="media">
-                           <p class="pull-right"><small>6 zile in urm</small></p>
+                           <p class="pull-right"><small>6 zile in urma</small></p>
                             <a class="media-left" href="#">
                               <img src="http://lorempixel.com/40/40/people/4/">
                             </a>
                             <div class="media-body">
 
-                              <h4 class="media-heading user_name">Baltej Singh</h4>
-                              Wow! this is really great.
+                              <h4 class="media-heading user_name">Bogdan Luca</h4>
+                              De ce suntem asa saraci??? Vrem mai multi bani pentru scoli!
 
-                              <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                              <p><small><a href="">Upvote</a> - <a href="">Downvote</a></small></p>
                             </div>
-                          </div>
+                          </div> -->
                    </div>
 
 
@@ -97,6 +112,7 @@
       </div>
    </div>
   </div>
+  <foot-comp></foot-comp>
   <script>
   var cheltuieli = [{
                       id: 'curente',

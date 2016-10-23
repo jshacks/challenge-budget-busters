@@ -4,7 +4,11 @@
     app.directive('headComp', function() {
         return {
             restrict: 'E',
-            templateUrl: Global.templatesURL + 'head.html'
+            templateUrl: Global.templatesURL + 'head.html',
+            controller: function($scope, $location) {
+                $scope.isHome = $location.path() === '/';
+                console.log($scope.isHome)
+            }
         }
     });
 

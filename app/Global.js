@@ -1,6 +1,15 @@
 function Global() { }
 
 /*
+	HOST:
+*/
+
+// live
+
+// localhost:
+Global.host = 'http://localhost/challenge-budget-busters/';
+
+/*
 	Modules
 */
 Global.Modules = {};
