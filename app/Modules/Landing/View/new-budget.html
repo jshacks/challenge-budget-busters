@@ -65,6 +65,7 @@
                    <div class="comments-list">
                      <div ng-repeat="comment in comments" class="media">
                          <p class="pull-right"><small> {{ comment.date }}</small></p>
+                         <span class="votes">{{ comment.votes }}</span>
                           <a class="media-left" href="#">
                             <img ng-src="{{ comment.photo }}">
                           </a>
