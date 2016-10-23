@@ -1,11 +1,14 @@
-var mongoose = require('mongoose');
+var nodemon = require('nodemon');
 
-var MONGO_DB;
-var DOCKER_DB = process.env.DB_PORT;
-if ( DOCKER_DB ) {
-  MONGO_DB = DOCKER_DB.replace( 'tcp', 'mongodb' ) + '/budgetbusters';
-} else {
-  MONGO_DB = process.env.MONGODB;
-}
-var retry = 0;
-mongoose.connect(MONGO_DB);
+nodemon({
+    script: 'src/server.js',
+    ext: 'js json'
+});
+
+nodemon.on('start', function () {
+    console.log('App has started');
+}).on('quit', function () {
+    console.log('App has quit');
+}).on('restart', function (files) {
+    console.log('App restarted due to: ', files);
+});

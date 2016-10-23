@@ -85,6 +85,11 @@ h6 {
     font-size: 12px;
 }
 
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
 /* ================= Preloader ==================== */
 #preloader {
   position: fixed;
@@ -963,7 +968,9 @@ h6 {
     width: 75%;
     line-height: 24px;
 }
-
+.w-100 {
+    width: 100%;
+}
 
 /* Box-shadow */
 .box-shadow-10{

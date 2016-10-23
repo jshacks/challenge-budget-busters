@@ -12,3 +12,5 @@ web:
     - 8080:8080
   links:
     - db
+  environment:
+    SERVER_PORT: 8080
